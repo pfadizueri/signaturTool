@@ -2,8 +2,8 @@
   "languages": {
     "de": {
       "name": "Deutsch",
-      "code": "DE",
-    },
+      "code": "DE"
+    }
   },
   "ui": {
     "de": {
@@ -24,7 +24,7 @@
       "newSignatureButton": "Neue Signatur erstellen",
       "copySuccess": "Signatur HTML in Zwischenablage kopiert!",
       "copyError": "Fehler beim Kopieren in die Zwischenablage"
- 
+    }
   },
   "roles": {
     "vorstand": "Vorstand",
@@ -50,5 +50,4 @@
     "comite": "CMT Support",
     "Administration": "Administration / Support"
   }
-}
 }

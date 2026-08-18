@@ -3,7 +3,7 @@
     "name": "Pfadi Züri Signatur Generator",
     "version": "1.0.0",
     "defaultLanguage": "de",
-    "supportedLanguages": ["de"],
+    "supportedLanguages": ["de"]
   },
   "signature": {
     "websiteUrl": "www.pfadi.zuerich",
