@@ -1,11 +1,10 @@
-# Jamboree Signature Generator
+# Pfadi Züri Signatur Generator
 
-A pure JavaScript application to generate multilingual email signatures for the Jamboree organization.
+A pure JavaScript application to generate email signatures for the Pfadi Züri organization.
 
 ## Features
 
 - **Pure JavaScript**: No server-side dependencies - runs entirely in the browser
-- **Multilingual Support**: German, French, and Italian translations
 - **Configuration-Based**: Easy to maintain through JSON configuration files
 - **Responsive Design**: Works on desktop and mobile devices
 - **Real-time Preview**: Instant signature generation and preview

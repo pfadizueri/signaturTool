@@ -1,17 +1,16 @@
 {
   "app": {
-    "name": "Jamboree CH Signature Generator",
+    "name": "Pfadi Züri Signatur Generator",
     "version": "1.0.0",
     "defaultLanguage": "de",
-    "supportedLanguages": ["de", "fr", "it"]
+    "supportedLanguages": ["de"]
   },
   "signature": {
-    "websiteUrl": "www.jamboree.ch",
-    "logoPath": "img/Jamboree_Logo_Mailsignatur_small.png",
+    "websiteUrl": "www.pfadi.zuerich",
+    "logoPath": "img/RZ_Logo_Pfadizueri_blau.png",
     "logoHeight": "150px",
     "fontFamily": "arial",
     "fontSize": "12.5px",
-    "phoneNumber": "+41 56 426 22 11 (Tue & Fri 08:00-12:00)"
   },
   "form": {
     "validation": {
@@ -20,7 +19,6 @@
     }
   },
   "ui": {
-    "showLanguageSwitcher": true,
     "showStepNumbers": true,
     "enableFormValidation": true
   }
