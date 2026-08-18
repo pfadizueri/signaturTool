@@ -10,7 +10,7 @@
     "logoPath": "img/RZ_Logo_Pfadizueri_blau.png",
     "logoHeight": "150px",
     "fontFamily": "arial",
-    "fontSize": "12.5px",
+    "fontSize": "12.5px"
   },
   "form": {
     "validation": {
