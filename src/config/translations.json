@@ -2,7 +2,7 @@
   "languages": {
     "de": {
       "name": "Deutsch",
-      "code": "DE"
+      "code": "DE",
     },
   },
   "ui": {
@@ -50,4 +50,5 @@
     "comite": "CMT Support",
     "Administration": "Administration / Support"
   }
+}
 }
