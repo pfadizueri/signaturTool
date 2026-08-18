@@ -1,0 +1,98 @@
+{
+  "languages": {
+    "de": {
+      "name": "Deutsch",
+      "code": "DE"
+    },
+    "fr": {
+      "name": "Français",
+      "code": "FR"
+    },
+    "it": {
+      "name": "Italiano",
+      "code": "IT"
+    }
+  },
+  "ui": {
+    "de": {
+      "title": "Jamboree Signatur Generator",
+      "myInfo": "Meine Infos",
+      "myRole": "Meine Funktion",
+      "gender": "Geschlecht",
+      "male": "Männlich",
+      "female": "Weiblich",
+      "diverse": "Diverse",
+      "namePlaceholder": "Name und Vorname",
+      "pfadiPlaceholder": "Pfadiname",
+      "emailPlaceholder": "E-Mail-Adresse",
+      "rolePlaceholder": "Rolle",
+      "sectorPlaceholder": "Ressort",
+      "submitButton": "Senden",
+      "copyButton": "HTML kopieren",
+      "newSignatureButton": "Neue Signatur erstellen",
+      "copySuccess": "Signatur HTML in Zwischenablage kopiert!",
+      "copyError": "Fehler beim Kopieren in die Zwischenablage"
+    },
+    "fr": {
+      "title": "Générateur de signature Jamboree",
+      "myInfo": "Mes infos",
+      "myRole": "Ma fonction",
+      "gender": "Sexe",
+      "male": "Homme",
+      "female": "Femme",
+      "diverse": "Divers",
+      "namePlaceholder": "Nom Prénom",
+      "pfadiPlaceholder": "Totem",
+      "emailPlaceholder": "Adresse e-mail",
+      "rolePlaceholder": "Rôle",
+      "sectorPlaceholder": "Ressort",
+      "submitButton": "Envoyer",
+      "copyButton": "Copier HTML",
+      "newSignatureButton": "Créer nouvelle signature",
+      "copySuccess": "HTML de signature copié dans le presse-papiers!",
+      "copyError": "Échec de la copie dans le presse-papiers"
+    },
+    "it": {
+      "title": "Generatore di firma Jamboree",
+      "myInfo": "I miei dati",
+      "myRole": "La mia funzione",
+      "gender": "Sesso",
+      "male": "Uomo",
+      "female": "Donna",
+      "diverse": "Diverso",
+      "namePlaceholder": "Nome e Cognome",
+      "pfadiPlaceholder": "Totem",
+      "emailPlaceholder": "Indirizzo email",
+      "rolePlaceholder": "Ruolo",
+      "sectorPlaceholder": "Ressort",
+      "submitButton": "Invia",
+      "copyButton": "Copia HTML",
+      "newSignatureButton": "Crea nuova firma",
+      "copySuccess": "HTML firma copiato negli appunti!",
+      "copyError": "Errore nella copia negli appunti"
+    }
+  },
+  "roles": {
+    "delegationlead": "CMT",
+    "unitleader": "Unit Leader",
+    "istmember": "IST",
+    "none": ""
+  },
+  "sectors": {
+    "HoC": "Head of Contingent",
+    "Finance": "Finance",
+    "Logistic": "Logistics",
+    "Communication": "Communication",
+    "IST": "IST Support (Head of)",
+    "Support": "Support",
+    "IT": "IT",
+    "SocialMedia": "Social Media",
+    "Design": "Design",
+    "ContingentTent": "Contingent Tent",
+    "UnitSupport": "Unit Support (Head of)",
+    "SMS": "Swiss Media Service",
+    "safetyAndPrevention": "Safety and Prevention",
+    "comite": "CMT Support",
+    "Administration": "Administration / Support"
+  }
+}

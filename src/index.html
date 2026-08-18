@@ -1,0 +1,95 @@
+<!doctype html>
+<html class="no-js" lang="DE">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/main.css">
+
+    <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+
+    <header>
+        <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px" y="0px" viewBox="0 0 1920 1080" style="enable-background:new 0 0 1920 1080;" xml:space="preserve">
+
+            <path class="st0" d="M0.5-0.5v450c0,74.1,97.8,173.4,210.3,171.9c121.3-1.6,260.5-106.9,335.7-106.9c145,0,65,236,296,236
+	s299-200,452-200s284,149,437,149s187-82,188-109s0-591,0-591H0.5z" />
+        </svg>
+    </header>
+    <div class="container">
+        <ul class="langue">
+            <li><a href="#fr">Fr</a></li>
+            <li class="active"><a href="#de">De</a></li>
+            <li><a href="#it">It</a></li>
+        </ul>
+        <form id="signatureForm">
+            <div class="column">
+                <p class="info"><span class="number">1</span>Meine Infos</p>
+                <div class="gender-select">
+                    <h2>Geschlecht</h2>
+                    <div class="input">
+                        <input required type="radio" id="male" name="gender" value="male">
+                        <label for="male">Männlich</label><br>
+                    </div>
+                    <div class="input">
+                        <input required type="radio" id="female" name="gender" value="female">
+                        <label for="female">Weiblich</label><br>
+                    </div>
+                    <div class="input">
+                        <input required type="radio" id="diverse" name="gender" value="diverse">
+                        <label for="diverse">Diverse</label><br>
+                    </div>
+                </div>
+                <input type="text" name="firstname" placeholder="Name und Vorname" required>
+                <input type="text" name="pfadiName" placeholder="Pfadiname">
+                <input type="email" name="mail" placeholder="E-Mail-Adresse" required>
+            </div>
+            <div class="column">
+                <p class="info"><span class="number">2</span>Meine Funktion</p>
+                <select required name="role" id="role">
+                    <option value="">Rolle</option>
+                    <option value="delegationlead">Delegationsleitung</option>
+                    <option value="unitleader">Unit Leader</option>
+                    <option value="istmember">IST Member</option>
+                    <option value="none">-</option>
+                </select>
+                <select name="Comission">
+                    <option value="">Ressort</option>
+                    <option value="HoC">HoC</option>
+                    <option value="Finance">Finanzen</option>
+                    <option value="Logistic">Logistik</option>
+                    <option value="Communication">Kommunikation</option>
+                    <option value="IST">IST Support (Head of)</option>
+                    <option value="Support">Support</option>
+                    <option value="IT">IT</option>
+                    <option value="SocialMedia">Social Media</option>
+                    <option value="Design">Design</option>
+                    <option value="ContingentTent">Contingent Tent</option>
+                    <option value="UnitSupport">Unit Support</option>
+                    <option value="SMS">Swiss Medical Service</option>
+                    <option value="safetyAndPrevention">Safety and Prevention</option>
+                    <option value="CMT">CMT</option>
+                    <option value="Administration">Administration / Support</option>
+                </select>
+            </div>
+            <div class="button-container">
+                <input class="button" type="submit" value="Senden">
+            </div>
+        </form>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

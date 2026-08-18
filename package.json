@@ -1,0 +1,25 @@
+{
+  "name": "jamboree-signature-generator",
+  "version": "2.0.0",
+  "description": "JavaScript-only signature generator for Jamboree CH",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server src -p 8080 -c-1",
+    "dev": "http-server src -p 8080 -c-1 -o",
+    "build": "echo 'No build step required for pure client-side app'",
+    "test": "echo 'No tests specified yet'"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "signature",
+    "email",
+    "jamboree",
+    "javascript",
+    "html"
+  ],
+  "author": "Jamboree IT CH",
+  "license": "MIT"
+}
