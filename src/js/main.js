@@ -185,7 +185,7 @@ class SignatureGenerator {
                         ${p(this.config.signature.addressLine2, 'font-weight: 300;')}
                         ${p(`<a href="https://${this.config.signature.websiteUrl}" target="_blank" style="${linkStyle}">${this.config.signature.websiteUrl}</a>`, 'font-weight: 300;')}
                         <br>
-                        <img src="${this.config.signature.logoPath}" alt="Pfadi Züri Logo" width="${this.config.signature.logoWidth}">
+                        <a href="https://${this.config.signature.websiteUrl}" target="_blank"><img src="${this.config.signature.logoPath}" alt="Pfadi Züri Logo" width="${this.config.signature.logoWidth}" style="border: 0;"></a>
                     </td>
                 </tr>
             </table>
