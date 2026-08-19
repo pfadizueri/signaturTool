@@ -17,8 +17,9 @@
       "namePlaceholder": "Name und Vorname",
       "pfadiPlaceholder": "Pfadiname",
       "emailPlaceholder": "E-Mail-Adresse [@pfadizueri.ch]",
-      "rolePlaceholder": "Rolle",
-      "sectorPlaceholder": "Ressort",
+      "roleLine1Placeholder": "Funktion Zeile 1",
+      "roleLine2Placeholder": "Funktion Zeile 2 (optional)",
+      "phonePlaceholder": "Telefonnummer (optional)",
       "submitButton": "Senden",
       "copyButton": "HTML kopieren",
       "newSignatureButton": "Neue Signatur erstellen",
@@ -26,28 +27,9 @@
       "copyError": "Fehler beim Kopieren in die Zwischenablage"
     }
   },
-  "roles": {
-    "vorstand": "Vorstand",
-    "kalei": "Kantonsleitung",
-    "kal": "Kantonalsleiter*in",
-    "team": "Mitglied",
-    "none": ""
-  },
-  "sectors": {
-    "HoC": "Head of Contingent",
-    "Finance": "Finance",
-    "Logistic": "Logistics",
-    "Communication": "Communication",
-    "IST": "IST Support (Head of)",
-    "Support": "Support",
-    "IT": "IT",
-    "SocialMedia": "Social Media",
-    "Design": "Design",
-    "ContingentTent": "Contingent Tent",
-    "UnitSupport": "Unit Support (Head of)",
-    "SMS": "Swiss Media Service",
-    "safetyAndPrevention": "Safety and Prevention",
-    "comite": "CMT Support",
-    "Administration": "Administration / Support"
+  "pronouns": {
+    "male": "er/ihm",
+    "female": "sie/ihr",
+    "diverse": ""
   }
 }

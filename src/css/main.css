@@ -252,15 +252,10 @@ a {
     border-collapse: collapse;
 }
 
-.signature-display th {
+.signature-display td {
     vertical-align: top;
     text-align: left;
     padding: 10px;
-}
-
-.signature-display th:first-child {
-    width: auto;
-    padding-right: 20px;
 }
 
 /* Notification styles */

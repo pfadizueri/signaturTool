@@ -94,8 +94,9 @@ class SignatureGenerator {
             'input[name="firstname"]': { placeholder: ui.namePlaceholder },
             'input[name="pfadiName"]': { placeholder: ui.pfadiPlaceholder },
             'input[name="mail"]': { placeholder: ui.emailPlaceholder },
-            '#role option[value=""]': ui.rolePlaceholder,
-            'select[name="Comission"] option[value=""]': ui.sectorPlaceholder,
+            'input[name="roleLine1"]': { placeholder: ui.roleLine1Placeholder },
+            'input[name="roleLine2"]': { placeholder: ui.roleLine2Placeholder },
+            'input[name="phone"]': { placeholder: ui.phonePlaceholder },
             '.button': { value: ui.submitButton }
         };
 
@@ -109,67 +110,6 @@ class SignatureGenerator {
                 }
             }
         });
-
-        // Update role options
-        this.updateRoleOptions();
-        this.updateSectorOptions();
-    }
-
-    updateRoleOptions() {
-        const roleSelect = document.querySelector('#role');
-        if (!roleSelect) return;
-
-        // Keep the first empty option, update the rest
-        const options = roleSelect.querySelectorAll('option:not([value=""])');
-        options.forEach(option => {
-            const roleKey = option.value;
-            if (this.translations.roles[roleKey]) {
-                // Use the current language for role display
-                const roleTranslation = this.translations.roles[roleKey][this.currentLanguage];
-                if (roleTranslation && roleTranslation.male) {
-                    // Use male form as default display (since we don't know gender yet)
-                    option.textContent = roleTranslation.male || roleKey;
-                }
-            }
-        });
-    }
-
-    getGermanRoleDisplayName(roleKey) {
-        // This method is no longer needed but kept for compatibility
-        const roleMap = {
-            'delegationlead': 'Delegationsleitung',
-            'unitleader': 'Unit Leader',
-            'istmember': 'IST Member',
-            'none': '-'
-        };
-        return roleMap[roleKey] || roleKey;
-    }
-
-    updateSectorOptions() {
-        const sectorSelect = document.querySelector('select[name="Comission"]');
-        if (!sectorSelect) return;
-
-        const options = sectorSelect.querySelectorAll('option:not([value=""])');
-        options.forEach(option => {
-            const sectorKey = option.value;
-            if (this.translations.sectors[sectorKey]) {
-                // Use current language for sector display
-                option.textContent = this.translations.sectors[sectorKey][this.currentLanguage] || sectorKey;
-            }
-        });
-    }
-
-    handleRoleChange(role) {
-        const subSectorInput = document.querySelector('input[name="subSector"]');
-        if (!subSectorInput) return;
-
-        // Show subsector for all roles except "none"
-        if (role === 'none') {
-            subSectorInput.style.display = 'none';
-            subSectorInput.value = '';
-        } else {
-            subSectorInput.style.display = 'block';
-        }
     }
 
     validateForm(formData) {
@@ -216,38 +156,37 @@ class SignatureGenerator {
     }
 
     buildSignatureHTML(data) {
-        const role = data.role;
-        const sector = data.Comission;
-        const gender = data.gender;
+        const pronoun = this.translations.pronouns[data.gender] || '';
+        const nameLine = `${data.firstname}${data.pfadiName ? ' / ' + data.pfadiName : ''}${pronoun ? ' (' + pronoun + ')' : ''}`;
 
-        const roleText = role && this.translations.roles[role];
-        const sectorText = sector && this.translations.sectors[sector];
-        const resultingLine = roleText ? (`${roleText}${sectorText ? ' | ' + sectorText : ''}`) : sectorText;
+        const contactLine = data.phone
+            ? `${data.mail || ''} / Tel. ${data.phone}`
+            : `${data.mail || ''}`;
 
-        console.log('Role text:', roleText);
-        console.log('Sector text:', sectorText);
-        console.log('Resulting line:', resultingLine);
+        const font = `font-family: '${this.config.signature.fontFamily}'; font-size: ${this.config.signature.fontSize};`;
+        const p = (content, extraStyle = '') => `<p style="margin: 0; text-align: left; ${font} ${extraStyle}">${content}</p>`;
 
         return `
             <table id="t01">
                 <tr>
-                    <th>
-                        <img src="${this.config.signature.logoPath}" alt="Jamboree logo" height="${this.config.signature.logoHeight}">
-                    </th>
-                    <th style="margin: 0; padding: 0; line-height: 15px">
-                        <p style="font-weight: 700; margin: 0; text-align: left; font-family: '${this.config.signature.fontFamily}'; font-size: ${this.config.signature.fontSize}">${data.firstname}${data.pfadiName ? ' / ' + data.pfadiName : ''}</p>
+                    <td style="margin: 0; padding: 0; line-height: 15px">
+                        ${p(nameLine, 'font-weight: 700;')}
                         <br>
-                        <p style="margin: 0; text-align: left; font-family: '${this.config.signature.fontFamily}'; font-size: ${this.config.signature.fontSize}; font-weight: 300">${resultingLine}</p>
-
+                        ${p(data.roleLine1 || '', 'font-weight: 300;')}
+                        ${data.roleLine2 ? p(data.roleLine2, 'font-weight: 300;') : ''}
                         <br>
-                        <p style="margin: 0; text-align: left; font-family: '${this.config.signature.fontFamily}'; font-size: ${this.config.signature.fontSize}; font-weight: 300">Swiss Contingent</p>
-                        <p style="margin: 0; text-align: left; font-family: '${this.config.signature.fontFamily}'; font-size: ${this.config.signature.fontSize}; font-weight: 300">World Scout Jamboree 2027</p>
+                        ${p(contactLine, 'font-weight: 300;')}
                         <br>
-
-                        <p style="margin: 0; text-align: left; font-family: '${this.config.signature.fontFamily}'; font-size: ${this.config.signature.fontSize}; font-weight: 300">${this.config.signature.phoneNumber || ''}</p>
-                        <p style="margin: 0; text-align: left; font-family: '${this.config.signature.fontFamily}'; font-size: ${this.config.signature.fontSize}; font-weight: 300"><a href="mailto:${data.mail || ''}">${data.mail || ''}</a></p>
-                        <p style="margin: 0; text-align: left; font-family: '${this.config.signature.fontFamily}'; font-size: ${this.config.signature.fontSize}; font-weight: 300"><a href="${this.config.signature.websiteUrl}" target="_blank">${this.config.signature.websiteUrl}</a></p>
-                    </th>
+                        ${p(this.config.signature.organizationName, 'font-weight: 300;')}
+                        ${p(this.config.signature.addressLine1, 'font-weight: 300;')}
+                        ${p(this.config.signature.addressLine2, 'font-weight: 300;')}
+                        ${p(`<a href="https://${this.config.signature.websiteUrl}" target="_blank">${this.config.signature.websiteUrl}</a>`, 'font-weight: 300;')}
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top: 15px;">
+                        <img src="${this.config.signature.logoPath}" alt="Pfadi Züri Logo" height="${this.config.signature.logoHeight}">
+                    </td>
                 </tr>
             </table>
         `;
