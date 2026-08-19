@@ -1,6 +1,7 @@
 # Pfadi Züri Signatur Generator
 
 A pure JavaScript application to generate email signatures for the Pfadi Züri organization.
+You can access the generator here: signatur.pfadi.zuerich
 
 ## Features
 
