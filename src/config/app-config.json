@@ -6,13 +6,14 @@
     "supportedLanguages": ["de"]
   },
   "signature": {
-    "organizationName": "Pfadi Züri - Kantonalverband der Zürcher Pfadis",
+    "organizationShortName": "Pfadi Züri",
+    "organizationSuffix": "Kantonalverband der Zürcher Pfadis",
     "addressLine1": "Birmensdorferstrasse 50",
     "addressLine2": "8004 Zürich",
     "websiteUrl": "www.pfadi.zuerich",
-    "logoPath": "img/RZ_Logo_Pfadizueri_blau.png",
-    "logoHeight": "150px",
-    "fontFamily": "arial",
+    "logoPath": "img/logo_signatur.png",
+    "logoWidth": "100px",
+    "fontFamily": "Verdana",
     "fontSize": "12.5px"
   },
   "form": {

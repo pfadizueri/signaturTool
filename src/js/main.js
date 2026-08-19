@@ -85,8 +85,8 @@ class SignatureGenerator {
 
         // Update form labels and placeholders
         const elements = {
-            '.info:first-of-type': ui.myInfo,
-            '.info:last-of-type': ui.myRole,
+            '.column:nth-of-type(1) .info .label': ui.myInfo,
+            '.column:nth-of-type(2) .info .label': ui.myRole,
             '.gender-select h2': ui.gender,
             'label[for="male"]': ui.male,
             'label[for="female"]': ui.female,
@@ -157,35 +157,35 @@ class SignatureGenerator {
 
     buildSignatureHTML(data) {
         const pronoun = this.translations.pronouns[data.gender] || '';
-        const nameLine = `${data.firstname}${data.pfadiName ? ' / ' + data.pfadiName : ''}${pronoun ? ' (' + pronoun + ')' : ''}`;
+        const pronounSpan = pronoun ? ` <span style="font-weight: 300;">(${pronoun})</span>` : '';
+        const nameLine = `${data.firstname}${data.pfadiName ? ' / ' + data.pfadiName : ''}${pronounSpan}`;
 
+        const linkStyle = 'color: #086CB3; text-decoration: underline;';
+        const mailLink = `<a href="mailto:${data.mail || ''}" style="${linkStyle}">${data.mail || ''}</a>`;
         const contactLine = data.phone
-            ? `${data.mail || ''} / Tel. ${data.phone}`
-            : `${data.mail || ''}`;
+            ? `${mailLink} / Tel. ${data.phone}`
+            : mailLink;
 
         const font = `font-family: '${this.config.signature.fontFamily}'; font-size: ${this.config.signature.fontSize};`;
         const p = (content, extraStyle = '') => `<p style="margin: 0; text-align: left; ${font} ${extraStyle}">${content}</p>`;
+
+        const orgLine = `<b>${this.config.signature.organizationShortName}</b> - ${this.config.signature.organizationSuffix}`;
 
         return `
             <table id="t01">
                 <tr>
                     <td style="margin: 0; padding: 0; line-height: 15px">
                         ${p(nameLine, 'font-weight: 700;')}
-                        <br>
                         ${p(data.roleLine1 || '', 'font-weight: 300;')}
                         ${data.roleLine2 ? p(data.roleLine2, 'font-weight: 300;') : ''}
-                        <br>
                         ${p(contactLine, 'font-weight: 300;')}
                         <br>
-                        ${p(this.config.signature.organizationName, 'font-weight: 300;')}
+                        ${p(orgLine, 'font-weight: 300;')}
                         ${p(this.config.signature.addressLine1, 'font-weight: 300;')}
                         ${p(this.config.signature.addressLine2, 'font-weight: 300;')}
-                        ${p(`<a href="https://${this.config.signature.websiteUrl}" target="_blank">${this.config.signature.websiteUrl}</a>`, 'font-weight: 300;')}
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding-top: 15px;">
-                        <img src="${this.config.signature.logoPath}" alt="Pfadi Züri Logo" height="${this.config.signature.logoHeight}">
+                        ${p(`<a href="https://${this.config.signature.websiteUrl}" target="_blank" style="${linkStyle}">${this.config.signature.websiteUrl}</a>`, 'font-weight: 300;')}
+                        <br>
+                        <img src="${this.config.signature.logoPath}" alt="Pfadi Züri Logo" width="${this.config.signature.logoWidth}">
                     </td>
                 </tr>
             </table>
